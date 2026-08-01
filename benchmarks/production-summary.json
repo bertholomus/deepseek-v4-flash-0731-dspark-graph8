@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "artifact": "independent two-node GB10 DSpark Graph-8 deployment",
+  "model": {
+    "repo": "deepseek-ai/DeepSeek-V4-Flash-0731",
+    "revision": "9e165c30e2704aec5d9d593cce3eebd58bbef1cb",
+    "max_model_len": 1048576,
+    "shards_verified_per_node": 48
+  },
+  "runtime": {
+    "tensor_parallel_size": 2,
+    "mtp_num_tokens": 5,
+    "kv_cache_dtype": "nvfp4_ds_mla",
+    "moe_backend": "flashinfer_b12x",
+    "breakable_cudagraph": false,
+    "max_cudagraph_capture_size": 8,
+    "observed_capture_sizes": [1, 2, 4, 8],
+    "kv_capacity_tokens": 1878944
+  },
+  "production_three_run_medians": [
+    {
+      "name": "count300",
+      "median_decode_tok_s": 91.88745523795873,
+      "median_ttft_s": 0.18609969690442085,
+      "acceptance_pct": 98.81188118811882
+    },
+    {
+      "name": "dataclasses20",
+      "median_decode_tok_s": 84.43116286125947,
+      "median_ttft_s": 0.24898967309854925,
+      "acceptance_pct": 98.66141732283465
+    },
+    {
+      "name": "prose500",
+      "median_decode_tok_s": 40.078341078158616,
+      "median_ttft_s": 0.2347590709105134,
+      "acceptance_pct": 32.104770813844716
+    }
+  ],
+  "graph4_to_graph8": [
+    {"name": "count300", "graph4_tok_s": 74.28, "graph8_tok_s": 93.90, "gain_pct": 26.42},
+    {"name": "dataclasses20", "graph4_tok_s": 75.22, "graph8_tok_s": 86.33, "gain_pct": 14.78},
+    {"name": "prose500", "graph4_tok_s": 32.12, "graph8_tok_s": 40.87, "gain_pct": 27.24}
+  ],
+  "production_gates": {
+    "tool_call_exact": true,
+    "tool_continuation": true,
+    "strict_json": true,
+    "context_prompt_tokens": 159979,
+    "context_cached_tokens": 0,
+    "context_elapsed_s": 97.49684286117554,
+    "context_exact_retrieval": true,
+    "restart_smoke": true
+  },
+  "equivalent_qualification_pair": {
+    "prompt_tokens": 949896,
+    "cached_tokens": 0,
+    "ttft_s": 1057.9844480920583,
+    "elapsed_s": 1057.9940972700715,
+    "exact_retrieval": true
+  }
+}

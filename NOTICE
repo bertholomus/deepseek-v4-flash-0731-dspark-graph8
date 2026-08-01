@@ -1,0 +1,30 @@
+UPSTREAM ATTRIBUTION AND REPRODUCIBILITY PINS
+
+Official model
+- DeepSeek-AI, DeepSeek-V4-Flash-0731
+- https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731
+- Revision: 9e165c30e2704aec5d9d593cce3eebd58bbef1cb
+- License: MIT
+
+GB10 runtime/image
+- Anemll/dspark-vllm-gx10
+- https://github.com/Anemll/dspark-vllm-gx10
+- Audited commit: 47503f8e38dadd4dededca798150db2619594fce
+- License: MIT; copyright 2026 Anemll project contributors
+- Image: ghcr.io/anemll/dspark-vllm-gx10:0.1.1
+- Registry digest: sha256:a83948492cf13df455170fb42885f5ef4db54fefe0feff0f841ecbff464ac9d8
+
+Two-node deployment sources consulted
+- MiaAI-Lab/DeepSeek-v4-Flash-DSpark-2x-DGX-Spark
+  https://github.com/MiaAI-Lab/DeepSeek-v4-Flash-DSpark-2x-DGX-Spark
+  Audited commit: 914c35bd7d5607560048e4467c3fdd42e892e297
+  License file: MIT; copyright 2026 Tony Deangelo
+- tonyd2wild/DeepSeek-v4-Flash-0731-DSpark-1M-NVFP4-KV-2x-DGX-Spark
+  https://github.com/tonyd2wild/DeepSeek-v4-Flash-0731-DSpark-1M-NVFP4-KV-2x-DGX-Spark
+  Audited commit: d728faee9f5a8d5ebafe7bc44bca6c5d8d0d192f
+- Weschera/DeepSeek-V4-Flash-0731-DSpark-2x-DGX-Spark
+  https://github.com/Weschera/DeepSeek-V4-Flash-0731-DSpark-2x-DGX-Spark
+  Audited commit: e6f349688b59f6accbaded98cbe751ec50b6b1d5
+
+This repository is an independent deployment/benchmark package. It is not an
+official DeepSeek, Anemll, MiaAI-Lab, Tony Deangelo, or Weschera release.

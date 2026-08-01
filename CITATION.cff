@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this deployment recipe or benchmark package, please cite it and the official DeepSeek-V4 report."
+title: "DeepSeek-V4-Flash-0731 DSpark Graph-8 on two GB10 nodes"
+type: software
+authors:
+  - name: bertholomus
+version: 1.0.0
+date-released: 2026-08-01
+license: MIT
+repository-code: "https://github.com/bertholomus/deepseek-v4-flash-0731-dspark-graph8"
+keywords:
+  - DeepSeek-V4
+  - DSpark
+  - vLLM
+  - GB10
+  - speculative decoding
+references:
+  - type: software
+    title: DeepSeek-V4-Flash-0731
+    authors:
+      - name: DeepSeek-AI
+    url: "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731"
