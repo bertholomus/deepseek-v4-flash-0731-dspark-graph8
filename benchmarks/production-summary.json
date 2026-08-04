@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "artifact": "independent two-node GB10 DSpark Graph-8 deployment",
   "model": {
     "repo": "deepseek-ai/DeepSeek-V4-Flash-0731",
@@ -15,7 +15,26 @@
     "breakable_cudagraph": false,
     "max_cudagraph_capture_size": 8,
     "observed_capture_sizes": [1, 2, 4, 8],
-    "kv_capacity_tokens": 1878944
+    "kv_capacity_tokens": 1372579,
+    "max_num_seqs": 2,
+    "max_num_batched_tokens": 4096,
+    "gpu_memory_utilization": 0.75,
+    "ucx_mem_mmap_hook_mode": "none",
+    "ucx_rcache_max_unreleased": 1024
+  },
+  "balanced_concurrency_proof": {
+    "simultaneous_requests": 2,
+    "running_during_test": 2,
+    "waiting_during_test": 0,
+    "completion_tokens_per_request": 1005,
+    "elapsed_seconds": 21.05,
+    "per_stream_tokens_per_second": 47.74,
+    "aggregate_tokens_per_second": 95.48,
+    "exact_integer_range_1_500": true,
+    "post_baseline_nvidia_allocation_errors_per_node": 0,
+    "mem_available_gib_approx": [20, 18],
+    "memory_psi_avg10": 0.0,
+    "service_restarts": 0
   },
   "production_three_run_medians": [
     {

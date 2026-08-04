@@ -4,6 +4,13 @@
 
 Measurements were collected from a two-node NVIDIA GB10-class tensor-parallel service. Each node held a complete, independently verified copy of the official DeepSeek-V4-Flash-0731 checkpoint. The service used TP2 over RoCE v2, DSpark K5, NVFP4 DS-MLA KV cache, FlashInfer B12X MoE, and ordinary CUDA Graphs with observed capture sizes `[1, 2, 4, 8]`.
 
+The warm single-request medians below were collected during initial Graph-8
+qualification. The later balanced stability profile reduced GPU utilization to
+0.75 and batched tokens to 4,096, retained Graph-8, set maximum sequences to 2,
+and enabled the two UCX safeguards described in `STABILITY.md`. Its separate
+C2 proof measured 47.74 tok/s per stream and 95.48 tok/s aggregate. Do not mix
+the single-request median and concurrent aggregate definitions.
+
 ## Decode throughput
 
 `decode_tok_s` is completion tokens divided by elapsed time after receipt of the first non-empty streamed content token. It is not end-to-end request throughput and excludes TTFT. Each reported value is the median of three measured runs after one unmeasured warm-up for that prompt shape.
@@ -42,5 +49,10 @@ Record at minimum:
 - CUDA Graph capture set observed in startup logs;
 - warm-up count, repetitions, request concurrency, prompt, and sampling settings;
 - raw API usage and vLLM speculative counters.
+
+For GB10 stability claims also record `MemAvailable`, memory PSI, swap,
+post-start NVIDIA allocation-error deltas, service restart count, request
+running/waiting gauges, and whether startup-only allocation probes were
+baselined only after the endpoint became healthy.
 
 Do not compare these numbers to another system unless tokenization, prompt, completion length, concurrency, warm-up, and throughput definitions match.
