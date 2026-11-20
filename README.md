@@ -17,6 +17,8 @@ tags:
 
 # DeepSeek-V4-Flash-0731 DSpark Graph-8 on two GB10 nodes
 
+> **Archived.** This DeepSeek-V4-Flash-0731 (vLLM / DSpark) recipe is superseded by [bertholomus/deepseek-v4.1-tensorfold-tp2-2xgb10](https://github.com/bertholomus/deepseek-v4.1-tensorfold-tp2-2xgb10). This repository is read-only.
+
 A reproducible deployment and benchmark package for the official
 [`deepseek-ai/DeepSeek-V4-Flash-0731`](https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731)
 checkpoint on two NVIDIA GB10-class nodes using vLLM tensor parallelism, DSpark speculative decoding, NVFP4 DS-MLA KV cache, FlashInfer B12X MoE, RoCE, and ordinary CUDA Graph capture through batch shape 8.
